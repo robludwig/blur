@@ -43,5 +43,5 @@ if __name__ == '__main__':
     faces = detect_faces(image)
     for face in faces:
         x, y, w, h = face
-        blur_region(image,(x,y), (x+w, y+h))
-    cv2.imwrite(outputfilename, image)
+        blur_region(image,x,y,w,h)
+    save_image( image,outputfilename,)
