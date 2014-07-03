@@ -1,6 +1,6 @@
 import cv2
 
-CLASSIFIER_XML = "C:\\opencv\\haarcascade_frontalface_alt.xml"
+CLASSIFIER_XML = "haarcascade_frontalface_alt.xml"
 
 cascade = cv2.CascadeClassifier(CLASSIFIER_XML)
 
