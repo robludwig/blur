@@ -6,9 +6,9 @@ if __name__ == '__main__':
 	if len(sys.argv) < 2:
 		print "usage: blur.py image.png"
 		sys.exit(0)
-	image = load_image(sys.argv[1])
-	faces = detect_faces(image)
+	image = opencvfxns.load_image(sys.argv[1])
+	faces = opencvfxns.detect_faces(image)
 	for face in faces:
 		x, y, w, h = face
-        blur_region(image,(x,y), (x+w, y+h))
-	save_image( image,sys.argv[1])
+        opencvfxns.blur_region(image,x,y,w,h)
+	opencvfxns.save_image( image,sys.argv[1])
