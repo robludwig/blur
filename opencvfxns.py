@@ -26,9 +26,9 @@ def detect_faces(image):
 
 def blur_region(image,x,y,w,h):
 	'''blurs a region of the image in-place...'''
-    slice = image[y:y+h, x:x+w]
-    blurslice = cv2.blur(slice, (50,50))
-    image[y:y+h, x:x+w] = blurslice
+	slice = image[y:y+h, x:x+w]
+	blurslice = cv2.blur(slice, (50,50))
+	image[y:y+h, x:x+w] = blurslice
 
 def save_image(image, filename):
     cv2.imwrite(filename, image)
@@ -42,6 +42,6 @@ if __name__ == '__main__':
     image = load_image(filename)
     faces = detect_faces(image)
     for face in faces:
-        x, y, w, h = faces
+        x, y, w, h = face
         blur_region(image,(x,y), (x+w, y+h))
     cv2.imwrite(outputfilename, image)
