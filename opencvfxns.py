@@ -19,6 +19,13 @@ def load_image(filename):
     image = cv2.imread(filename)
     return image
 
+def half_scale_image(image):
+	#todo: scale each dimension of image by 1/2
+	pass
+	
+def gray_image(image):
+	return cv2.cvtColor(image,  cv2.cv.CV_RGB2GRAY)
+	
 def detect_faces(image):
     '''returns a list of all the faces in the image'''
     faces = cascade.detectMultiScale(image)
