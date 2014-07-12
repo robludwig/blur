@@ -12,8 +12,9 @@ if __name__ == '__main__':
 	for face in faces:
 		x, y, w, h = face
         opencvfxns.blur_region(image,x,y,w,h)
-	if sys.argv[2]:
+	if len(sys.argv) == 3:
 		output = sys.argv[2]
 	else:
+		#overwrite the image in place
 		output = sys.argv[1]
-	opencvfxns.save_image( output)
+	opencvfxns.save_image( image,output)
